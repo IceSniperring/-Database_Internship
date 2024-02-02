@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../外部样式表.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../js/Login.js"></script>
+    <script type="text/javascript" src="../js/jump.js"></script>
+</head>
+<body>
+<script>
+    const importUser = async () => {
+        const response = await fetch('http://localhost:3000/getUser');
+        const data = await response.json();
+        let table = document.getElementById("table");
+        for (let i = 0; i < data.length; i++)
+        {
+            let row = table.insertRow();
+            let cell1 = row.insertCell();
+            let cell2 = row.insertCell();
+            let cell3 = row.insertCell();
+            let cell4 = row.insertCell();
+            cell1.innerHTML=data[i].username;
+            cell2.innerHTML="武器兑换券*"+data[i].currency;
+            cell3.innerHTML=
+                '<iframe id="iframe_display" name="iframe_display" style="display: none;"></iframe><!--隐藏-->'+
+                '<form method="post" action="http://localhost:3000/updateUserCurrency" target="iframe_display">' +
+                '<input type="hidden" name="username" value='+data[i].username+'>'+
+                '<input type="hidden" name="Change" value='+(data[i].currency+1)+'>'+
+                '<input value="增加" type="submit" class="formstyle2" style="width:100px;height:50px;top:10%;" onclick="jumpToUerManage()">'+
+                '</form>'
+            cell4.innerHTML=
+                '<form method="post" action="http://localhost:3000/updateUserCurrency" target="iframe_display">' +
+                '<input type="hidden" name="username" value='+data[i].username+'>'+
+                '<input type="hidden" name="Change" value='+(data[i].currency-1)+'>'+
+                '<input value="减少" type="submit" class="formstyle2" style="width:100px;height:50px;top:10%;left:20%" onclick="jumpToUerManage()">'+
+                '</form>'
+        }
+    }
+    importUser();
+</script>
+<div class="background"></div>
+<nav>
+    <div class="container">
+        <div class="box">
+            <div class="content">
+                <h2>用户管理</h2>
+            </div>
+        </div>
+    </div>
+</nav>
+<img id="backpicleft" src="../网站图片/180px-左npc.png">
+<img id="backpictop" src="../网站图片/2.png" style="width:300px;height:180px">
+<img id="backpicright" src="../网站图片/180px-右npc.png">
+<button onclick="jumpToManage()" class="reviseItem"
+        style="position:fixed;left:10%;top:32%;background-color: lightgreen">
+    返回
+</button>
+<div class="container2">
+    <table id="table">
+        <tr>
+            <th>用户名</th>
+            <th>剩余武器兑换券</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

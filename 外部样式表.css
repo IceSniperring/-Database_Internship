@@ -1,0 +1,264 @@
+@font-face {
+    font-family: "也字工厂可爱小熊体";
+    src: url("也字工厂可爱小熊体.ttf");
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    background: url("网站图片/5.jpg");
+    background-size: cover;
+    position: fixed;
+    filter: blur(2px);
+}
+
+#backpictop {
+    width: 340px;
+    height: 270px;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+}
+
+#backpicleft {
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+}
+
+#backpicright {
+    position: fixed;
+    bottom: 0%;
+    right: 0%;
+}
+
+td img {
+    width: 100%;
+    height: 100%;
+    border: 5px solid pink;
+    border-radius: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "也字工厂可爱小熊体";
+}
+
+table {
+    width: 100%;
+    heigjt: 100%;
+}
+
+table th {
+    width: 256px;
+    height: 50px;
+    padding: 10px 10px;
+    font-size: 30px;
+    text-align: center;
+    color: wheat;
+}
+
+table td {
+    width: 256px;
+    height: 256px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 3px;
+    color: pink;
+}
+
+.login {
+    background: url("网站图片/1200px-真格背景图@300x.png");
+    background-size: cover;
+    width: 320px;
+    height: 200px;
+    position: fixed;
+    border: 4px solid pink;
+    border-radius: 10px;
+    left: 76%;
+    top: 20%;
+    opacity: 0.8;
+}
+
+.loginstyle {
+    width: 300px;
+    height: 220px;
+    border: 2px;
+    position: relative;
+    top: 20%;
+    left: 15%;
+}
+
+.formstyle {
+    width: 220px;
+    height: 30px;
+    border-radius: 5px;
+    background: url("网站图片/180px-Bt-2.png");
+    background-size: cover;
+    font-size: 25px;
+    color: white;
+}
+
+.formstyle2 {
+    width: 50px;
+    height: 25px;
+    position: relative;
+    left: 25%;
+    top: 10px;
+    background-color: aqua;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.formstyle2:hover {
+    background-color: pink;
+}
+
+.container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.content h2 {
+    font-style: italic;
+    font-size: 25px;
+}
+
+.nav1 {
+    width: 300px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 10px;;
+    position: absolute;
+    top: 3%;
+    left: 76%;
+    background: url("网站图片/nav1.png");
+    opacity: 0.9;
+}
+
+.nav1 .content {
+    position: relative;
+    top: 20%;
+    font-size: 30px;
+    text-align: center;
+    color: aliceblue;
+}
+
+.box {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 100px;
+    background: #111845a6;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgb(23, 32, 90);
+    border-radius: 20px;
+    border: 2px solid #2a3cad;
+    color: white;
+    padding: 20px;
+}
+
+td img:hover {
+    background-image: url("武器图片/afterhoke.png");
+    background-size: cover;
+}
+
+.box .content {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 2px solid #f0a591;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(9, 0, 0, 0.5);
+    color: yellow;
+}
+
+.container2 {
+    background: url("武器图片/900px-背景图.jpg");
+    position: absolute;
+    top: 20%;
+    right: 25%;
+    width: 50%;
+    opacity: 0.8;
+    border: 4px solid #111845a6;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(9, 0, 0, 0.5);
+}
+
+.register {
+    background: linear-gradient(#fffc15, purple);
+    width: 420px;
+    height: 280px;
+    border: 5px solid palegreen;
+    border-radius: 10px;
+    position: absolute;
+    margin-left: -140px;
+    margin-top: -210px;
+    top: 50%;
+    left: 50%;
+    opacity: 0.8;
+}
+
+fieldset {
+    border-radius: 10px;
+    margin: 10px 10px;
+    font-size: 20px;
+}
+
+label {
+    width: 100px;
+    text-align: right;
+    display: inline-block;
+}
+
+.reviseItem {
+    width: 150px;
+    height: 40px;
+    position: relative;
+    top: 5px;
+    font-size: 20px;
+    border-radius: 10px;
+    color: white;
+    background: transparent;
+}
+
+.reviseItem:hover {
+    background: url("网站图片/nav1.png");
+    font-size: 23px;
+}
+
+.nav2 {
+    width: 150px;
+    height: 180px;
+    border: 3px solid;
+    position: fixed;
+    left: 10%;
+    top: 33%;
+    border-radius:20px;
+    background:url("网站图片/top-2.jpg");
+    opacity:0.6;
+}
+
+.nav2n {
+    width: 90%;
+    height: 15%;
+    margin: 15px 10px 15px 10px;
+    font-size: 15px;
+    border-radius: 20px;
+    background:url("网站图片/nav1.png");
+    background-size: cover;
+}
+
+.nav2n:hover {
+    background: url("网站图片/180px-Top-6.jpg");
+    font-size: 20px;
+}

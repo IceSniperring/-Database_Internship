@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../外部样式表.css">
+    <script type="text/javascript" src="../js/managerLogin.js"></script>
+    <script type="text/javascript" src="../js/jump.js"></script>
+    <title></title>
+</head>
+<body>
+<div class="background"></div>
+<img id="backpicleft" src="../网站图片/180px-左npc.png">
+<img id="backpictop" src="../网站图片/2.png" style="width:300px;height:180px">
+<img id="backpicright" src="../网站图片/180px-右npc.png">
+<div class="register">
+    <form action="">
+        <input type="button" value="返回" onclick="jumpToLogin()" class="formstyle2"
+               style="margin:0px 0px 10px -90px;">
+        <fieldset>
+            <legend>管理员登陆</legend>
+            <br>&nbsp;
+            <label>管理员号：</label><input type="text" id="adminNo" class="formstyle" required="required">
+            <br>
+            <br>&nbsp;
+            <label>密码：</label><input type="password" id="adminPd" class="formstyle" required="required">
+            <br>
+            <br>
+            <input type="button" value="登录" class="formstyle2" style="margin-left:75px;" onclick="getManager()">
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>

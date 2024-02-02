@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="../外部样式表.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../js/jump.js"></script>
+    <title></title>
+</head>
+<body>
+<script>
+    function check()
+    {
+        const shop = async () => {
+            const response = await fetch('http://localhost:3000/getUser');
+            const data = await response.json();
+            for (let i = 0; i < data.length; i++)
+            {
+                if (username == data[i].username)
+                {
+                    if (data[i].currency >= 1)
+                    {
+                        alert("购买成功");
+                        document.getElementById('currency').innerHTML = --currency;
+                        jumpToMain();
+                    } else {
+                        alert("武器兑换券不足");
+                        return false;
+                    }
+                }
+            }
+        }
+        shop();
+    }
+    let weaponNa = "";
+    let user = decodeURI(document.URL);
+    username = user.slice(user.indexOf("=") + 1, user.indexOf("&"));
+    currency = user.slice(user.indexOf("^") + 1);
+    window.onload = function fresh()
+    {
+        document.getElementById("Users").innerHTML = username;
+        document.getElementById("currency").innerHTML = currency;
+        const seeWeapon = async () => {
+            const response = await fetch('http://localhost:3000/getWeapon');
+            const wpRes = await fetch('http://localhost:3000/getStorehouse')
+            const data = await response.json();
+            const wpData = await wpRes.json();
+            let table = document.getElementById("table");
+            for (let i = 0; i < data.length; i++)
+            {
+                let label = true;
+                if (data[i].isShelves == 1)
+                {
+                    let count = 1;
+                    let row = table.insertRow();
+                    let cell1 = row.insertCell();
+                    let cell2 = row.insertCell();
+                    let cell3 = row.insertCell();
+                    let cell4 = row.insertCell();
+                    cell1.innerHTML = data[i].wpName;
+                    cell2.innerHTML = '<img src ="' + data[i].wpApperanceurl + '">';
+                    cell3.innerHTML = "武器兑换券*1";
+                    for (let j = 0; j < wpData.length; j++)
+                    {
+                        if (wpData[j].wpName == data[i].wpName && wpData[j].username == username)
+                        {
+                            label = false;
+                            cell4.innerHTML =
+                                '已购买';
+                            break;
+                        }
+                    }
+                    if (label == true)
+                    {
+                        cell4.innerHTML =
+                            '<iframe id="iframe_display" name="iframe_display" style="display: none;"></iframe><!--隐藏-->' +
+                            '<form method="post" action="http://localhost:3000/updateCurrency" target="iframe_display" onsubmit="return check()">' +
+                            '<input type="hidden" name="wpName" value=' + data[i].wpName + '>' +
+                            '<input type="hidden" name="currency" value=' + (currency - 1) + '>' +
+                            '<input type="hidden" name="username" value=' + username + '>' +
+                            '<input type="submit" class="formstyle2" style="width:100px;' +
+                            'height:80px;position:relative;left:-0.5%" value="购买">' +
+                            '</form>';
+                    }
+                }
+            }
+        }
+        seeWeapon();
+    }
+
+</script>
+<div class="background"></div>
+<nav>
+    <div class="container">
+        <div class="box">
+            <div class="content">
+                <h2>Splatoon3武器价目一览 </h2>
+            </div>
+        </div>
+    </div>
+</nav>
+<section>
+    <img id="backpicleft" src="../网站图片/180px-左npc.png">
+    <img id="backpictop" src="../网站图片/2.png" style="width:300px;height:180px">
+    <img id="backpicright" src="../网站图片/180px-右npc.png">
+    <div class="nav1">
+        <p class="content" style="font-size:20px;">用户名：<span id="Users" style="color:lightgreen;">请登录</span></p>
+        <br>
+        <p class="content">武器兑换券*<span id="currency">0</span></p>
+    </div>
+    <div class="nav2" style="left:3%">
+        <button class="nav2n" onclick="jumpToMain()">主页</button>
+        <button class="nav2n" onclick="jumpToPag()">仓库</button>
+        <button class="nav2n" onclick="jumpToLogin()">登出</button>
+    </div>
+    <div class="container2" style="width:70%;right:15%;">
+        <table id="table">
+            <tr>
+                <th>武器名称</th>
+                <th>武器图片</th>
+                <th>武器价格</th>
+                <th></th>
+            </tr>
+        </table>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../外部样式表.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="../js/jump.js"></script>
+    <title>仓库</title>
+</head>
+<body>
+<script>
+    window.onload = function fresh()
+    {
+        let user = decodeURI(document.URL);
+        let username = user.slice(user.indexOf("=") + 1, user.indexOf("&"));
+        let currency = user.slice(user.indexOf("^") + 1);
+        document.getElementById("Users").innerHTML=username;
+        document.getElementById("currency").innerHTML=currency;
+        const getStorehouse = async () => {
+            const response = await fetch('http://localhost:3000/getStorehouse');
+            const data = await response.json();
+            let username = document.getElementById("Users").innerHTML;
+            let table = document.getElementById("table");
+            for (let i = 0; i < data.length; i++)
+            {
+                if (username == data[i].username)
+                {
+                    let row = table.insertRow();
+                    let cell = row.insertCell();
+                    cell.innerHTML = data[i].wpName;
+                }
+            }
+        }
+        getStorehouse();
+    }
+</script>
+<div class="background"></div>
+<nav>
+    <div class="container">
+        <div class="box">
+            <div class="content">
+                <h2>仓库 </h2>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="nav1">
+    <p class="content" style="font-size:20px;">用户名：<span id="Users" style="color:lightgreen;">请登录</span></p>
+    <br>
+    <p class="content">武器兑换券*<span id="currency">0</span></p>
+</div>
+<img id="backpicleft" src="../网站图片/180px-左npc.png">
+<img id="backpictop" src="../网站图片/2.png" style="width:300px;height:180px">
+<img id="backpicright" src="../网站图片/180px-右npc.png">
+<button onclick="jumpToMain()" class="reviseItem" style="position:fixed;left:10%;top:32%;background-color: lightgreen">
+    返回
+</button>
+<div class="container2" style="width:250px;position:relative;left:42%;top:100px;">
+    <table id="table">
+    </table>
+</div>
+</body>
+</html>

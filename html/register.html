@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../外部样式表.css">
+    <script type="text/javascript" src="../js/Register.js"></script>
+    <title></title>
+</head>
+<body>
+<div class="background"></div>
+<img id="backpicleft" src="../网站图片/180px-左npc.png">
+<img id="backpictop" src="../网站图片/2.png" style="width:300px;height:180px">
+<img id="backpicright" src="../网站图片/180px-右npc.png">
+<div class="register">
+    <iframe id="iframe_display" name="iframe_display" style="display: none;"></iframe><!--隐藏-->
+    <form method="post" action="http://localhost:3000/insertUser" target="iframe_display">
+        <input type="button" value="返回" onclick="javascript:jump()" class="formstyle2"
+               style="margin:0px 0px 10px -90px;">
+        <fieldset>
+            <legend>用户注册</legend>
+            <label>用户名：</label><input type="text" name="username" id="username" class="formstyle" required="required" s>
+            <br>
+            <br>
+            <label>密码：</label><input type="password" name="passwd1" id="passwd1" class="formstyle" required="required">
+            <br>
+            <br>
+            <label>重复密码：</label><input type="password" name="passwd2" id="passwd2" class="formstyle" required="required">
+            <br>
+            <br>
+            <input type="submit" value="注册" class="formstyle2" style="margin-left:75px;" onclick="getUser()">
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>
