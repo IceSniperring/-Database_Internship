@@ -37,6 +37,7 @@ td img {
     height: 100%;
     border: 5px solid pink;
     border-radius: 50px;
+    transition: .2s;
 }
 
 * {
@@ -109,6 +110,7 @@ table td {
     background-color: aqua;
     border-radius: 10px;
     font-size: 20px;
+    transition: .2s;
 }
 
 .formstyle2:hover {
@@ -163,6 +165,7 @@ table td {
 }
 
 td img:hover {
+    transition: .5s ease-in;
     background-image: url("武器图片/afterhoke.png");
     background-size: cover;
 }
@@ -229,9 +232,11 @@ label {
     border-radius: 10px;
     color: white;
     background: transparent;
+    transition: .2s ease-in;
 }
 
 .reviseItem:hover {
+    transition: .5s ease-in;
     background: url("网站图片/nav1.png");
     font-size: 23px;
 }
@@ -256,9 +261,11 @@ label {
     border-radius: 20px;
     background:url("网站图片/nav1.png");
     background-size: cover;
+    transition: .2s;
 }
 
 .nav2n:hover {
+    transition: .5s ease-in;
     background: url("网站图片/180px-Top-6.jpg");
     font-size: 20px;
 }
