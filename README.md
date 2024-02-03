@@ -1,24 +1,6 @@
 # 数据库实习
 <hr>
-## 运行图片（本地运行，不占用浏览器的端口）
 
-![Alt text](md_images/image-5.png)
-
-![Alt text](md_images/image-6.png)
-
-![Alt text](md_images/image-7.png)
-
-![Alt text](md_images/image-8.png)
-
-![Alt text](md_images/image-9.png)
-
-![Alt text](md_images/image-10.png)
-
-![Alt text](md_images/image-11.png)
-
-![Alt text](md_images/image-12.png)
-
-## 这是数据库实习的产物
 其中数据库由我的小组成员设计，前端和后端编写由我完成。由于之前没有前端和后端的基础，所以现在看来写的真是一言难尽。
 如果大家想尝试运行这个简陋的项目，可以将```数据库SQL\gamemanage.sql```文件导入到mysql中，然后修改```js/connectToMysql.js```文件中的内容：
 ```
@@ -78,3 +60,25 @@ wpName是武器名称<br>
 wpApperanceurl是武器图片的路径<br>
 currencyCost是需要消费的货币<br>
 isShelves用于表示是否处于上架状态<br>
+<hr>
+
+## 这是数据库实习的产物
+
+### 运行图片（本地运行）
+
+![Alt text](md_images/image-5.png)
+
+![Alt text](md_images/image-6.png)
+
+![Alt text](md_images/image-7.png)
+
+![Alt text](md_images/image-8.png)
+
+![Alt text](md_images/image-9.png)
+
+![Alt text](md_images/image-10.png)
+
+![Alt text](md_images/image-11.png)
+
+![Alt text](md_images/image-12.png)
+
