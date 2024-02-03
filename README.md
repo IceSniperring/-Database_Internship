@@ -1,6 +1,7 @@
 # 数据库实习
 <hr>
 ## 运行图片（本地运行，不占用浏览器的端口）
+
 ![Alt text](md_images/image-5.png)
 
 ![Alt text](md_images/image-6.png)
